@@ -1,0 +1,40 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+these are my packages
+
+```{r setup}
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+
+```
+
+
+here is our data
+
+```{r}
+library(readr)
+visits_by_hospital <- read_csv("https://raw.githubusercontent.com/philbowsher/Foundation-of-the-R-Workflow-workshop-2019-09-06/master/Examples/data/visits_by_hospital.csv")
+View(visits_by_hospital)
+
+
+```
+
+data viz|||
+
+```{r}
+
+ggplot(visits_by_hospital) +
+  aes(x = name, fill = total_visits, colour = encounterclass) +
+  geom_bar() +
+  scale_fill_gradient() +
+  scale_color_hue(direction = 1) +
+  theme_minimal()
+
+```
+
